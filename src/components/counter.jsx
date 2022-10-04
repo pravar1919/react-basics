@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 
 class Counter extends Component {
     state = { 
-        count : 0,
+        value : this.props.value,
         tags: []
     }; 
 
@@ -13,8 +13,7 @@ class Counter extends Component {
     // }
 
     handleIncrement = (e) => { // 2. get the this using arrow function.
-        console.log("clicked", e)
-        this.setState({count:this.state.count + 1}) // setState to make aware react that the state 
+        this.setState({value:this.state.value + 1}) // setState to make aware react that the state 
                                                     // has changed and it will update the real dom with 
                                                     // virtual dom.
         // obj.method(); -> return reference
@@ -23,8 +22,9 @@ class Counter extends Component {
     }
 
     render() { 
+        console.log("props", this.props);
         return (
-            <> 
+            <div> 
                 <span className={this.getBadgeClass()}>{this.formatCount()}</span>
                 <button 
                     onClick={() => this.handleIncrement({ id: Math.round(Math.random(100)*100)})} 
@@ -32,17 +32,17 @@ class Counter extends Component {
                 >
                     Increment
                 </button>
-            </>
+            </div>
         );
 
     }
     getBadgeClass() {
         let classes = "badge m-2 bg-";
-        classes += this.state.count === 0 ? 'warning' : 'primary';
+        classes += this.state.value === 0 ? 'warning' : 'primary';
         return classes;
     }
     formatCount(){
-        const { count } = this.state;
+        const { value: count } = this.state;
         return count === 0 ? 'Zero' : count;
     }
 }

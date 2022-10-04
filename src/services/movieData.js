@@ -88,3 +88,7 @@ export function getMovies (){
 export function getMovie (id){
     return movies.filter(m => m._id === id)
 }
+
+export function saveMovie(id){
+    movies.filter(m => m._id === id)
+}

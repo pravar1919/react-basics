@@ -5,6 +5,7 @@ const movies = [
         genere:{_id:"633be0d2fc13ae118d00113a", name: "Drama"},
         numberInStock:1,
         dailyRentalRate:2.5,
+        like:true,
         publishedDate:"2022-08-30T18:09:09Z"
     },
     {
@@ -13,6 +14,7 @@ const movies = [
         genere:{_id:"633be0d2fc13ae118d00113a", name: "Drama"},
         numberInStock:2,
         dailyRentalRate:3.6,
+        like:true,
         publishedDate:"2021-10-20T22:31:09Z"
     },
     {
@@ -21,6 +23,7 @@ const movies = [
         genere:{_id:"633be0d2fc13ae118d00113a", name: "Drama"},
         numberInStock:3,
         dailyRentalRate:4.2,
+        like:false,
         publishedDate:"2022-09-18T23:37:16Z"
     },
     {
@@ -29,6 +32,7 @@ const movies = [
         genere:{_id:"633be0d2fc13ae118d00113a", name: "Drama"},
         numberInStock:4,
         dailyRentalRate:3.3,
+        like:false,
         publishedDate:"2021-10-27T14:59:22Z"
     },
     {
@@ -37,6 +41,7 @@ const movies = [
         genere:{_id:"633be0d2fc13ae118d00113a", name: "Drama"},
         numberInStock:5,
         dailyRentalRate:2.0,
+        like:false,
         publishedDate:"2022-02-23T04:58:08Z"
     },
     {
@@ -45,6 +50,7 @@ const movies = [
         genere:{_id:"633be0d2fc13ae118d00113a", name: "Drama"},
         numberInStock:6,
         dailyRentalRate:1.9,
+        like:true,
         publishedDate:"2022-02-23T18:21:31Z"
     },
     {
@@ -53,6 +59,7 @@ const movies = [
         genere:{_id:"633be0d2fc13ae118d00113a", name: "Drama"},
         numberInStock:7,
         dailyRentalRate:4.6,
+        like:false,
         publishedDate:"2022-07-23T19:39:49Z"
     },
     {
@@ -61,6 +68,7 @@ const movies = [
         genere:{_id:"633be0d2fc13ae118d00113a", name: "Drama"},
         numberInStock:8,
         dailyRentalRate:2.6,
+        like:true,
         publishedDate:"2022-08-19T16:42:46Z"
     },
     {
@@ -69,6 +77,7 @@ const movies = [
         genere:{_id:"633be0d2fc13ae118d00113a", name: "Drama"},
         numberInStock:9,
         dailyRentalRate:1.5,
+        like:false,
         publishedDate:"2022-07-23T09:16:46Z"
     },
     {
@@ -77,6 +86,7 @@ const movies = [
         genere:{_id:"633be0d2fc13ae118d00113a", name: "Drama"},
         numberInStock:10,
         dailyRentalRate:3.8,
+        like:true,
         publishedDate:"2021-10-09T18:49:01Z"
     }
 ]

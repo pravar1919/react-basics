@@ -11,7 +11,7 @@ import Movies from "./components/movies";
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
-    <Counters />
+    <Movies />
   </React.StrictMode>
 );
 

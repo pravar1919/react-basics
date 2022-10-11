@@ -2,10 +2,12 @@ import React, { Component } from "react";
 import { getMovies } from "../services/movieData";
 import Pagination from "./common/pagination";
 import Like from "./likes";
+import paginate from "../utils/paginate";
 
 class Movies extends Component {
   state = {
     movies: getMovies(),
+    currentPage: 1,
     pageSize: 4,
   };
 
@@ -23,20 +25,22 @@ class Movies extends Component {
     this.setState({ movies });
   };
 
-  handlePageChange(page) {
-    console.log("page", page);
-  }
+  handlePageChange = (page) => {
+    this.setState({ currentPage: page });
+  };
   render() {
     const { length: count } = this.state.movies;
+    const { pageSize, currentPage, movies: allMovies } = this.state;
 
     if (count === 0) return <p>There is no Movie in the database.</p>;
+
+    const movies = paginate(allMovies, currentPage, pageSize);
     return (
       <div className="container">
         <div className="mb-5 mt-5">You have {count} movies.</div>
         <table className="table">
           <thead>
             <tr>
-              <th>#</th>
               <th>Title</th>
               <th>Genere</th>
               <th>Stock</th>
@@ -46,9 +50,8 @@ class Movies extends Component {
             </tr>
           </thead>
           <tbody>
-            {this.state.movies.map((movie, index) => (
+            {movies.map((movie, index) => (
               <tr key={movie._id}>
-                <th>{index + 1}</th>
                 <td>{movie.title}</td>
                 <td>{movie.genere.name}</td>
                 <td>{movie.numberInStock}</td>
@@ -62,7 +65,8 @@ class Movies extends Component {
                 <td>
                   <button
                     onClick={() => this.handleDelete(movie)}
-                    className="btn btn-danger">
+                    className="btn btn-danger"
+                  >
                     Delete
                   </button>
                 </td>
@@ -72,8 +76,9 @@ class Movies extends Component {
         </table>
         <Pagination
           itemCounts={count}
-          pageSize={this.state.pageSize}
+          pageSize={pageSize}
           onPageChange={this.handlePageChange}
+          currentPage={currentPage}
         />
       </div>
     );

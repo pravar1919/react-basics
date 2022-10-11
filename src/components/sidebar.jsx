@@ -1,11 +1,14 @@
 import React from "react";
+import { getGenere } from "../services/fakeGenereData";
 
 const SideBar = (props) => {
+  //const { allGenere } = props;
+  console.log(props.allGenere);
   return (
     <ul className="list-group">
-      <li className="list-group-item active">one</li>
-      <li className="list-group-item">two</li>
-      <li className="list-group-item">three</li>
+      {/* {allGenere.map((g) => {
+        <li className="list-group-item active">{g.name}</li>;
+      })} */}
     </ul>
   );
 };

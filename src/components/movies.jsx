@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { getMovies } from "../services/movieData";
 import Pagination from "./common/pagination";
+import { getGenere } from "../services/fakeGenereData";
 import Like from "./likes";
 import paginate from "../utils/paginate";
 import SideBar from "./sidebar";
@@ -8,6 +9,7 @@ import SideBar from "./sidebar";
 class Movies extends Component {
   state = {
     movies: getMovies(),
+    genere: getGenere(),
     currentPage: 1,
     pageSize: 4,
   };
@@ -31,7 +33,7 @@ class Movies extends Component {
   };
   render() {
     const { length: count } = this.state.movies;
-    const { pageSize, currentPage, movies: allMovies } = this.state;
+    const { pageSize, currentPage, movies: allMovies, genere } = this.state;
 
     if (count === 0) return <p>There is no Movie in the database.</p>;
 
@@ -39,10 +41,10 @@ class Movies extends Component {
     return (
       <div className="container">
         <div className="row">
-          <div className="col-3 mt-5" style={{ marginTop: "15px;" }}>
-            <SideBar />
+          <div className="col-2 mt-5" style={{ marginTop: "15px" }}>
+            <SideBar genere={genere} />
           </div>
-          <div className="col">
+          <div className="col-8">
             <div className="mt-5">You have {count} movies.</div>
             <table className="table">
               <thead>

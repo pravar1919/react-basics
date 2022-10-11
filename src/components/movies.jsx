@@ -8,12 +8,15 @@ import SideBar from "./sidebar";
 
 class Movies extends Component {
   state = {
-    movies: getMovies(),
-    genere: getGenere(),
+    movies: [],
+    genere: [],
     currentPage: 1,
     pageSize: 4,
   };
 
+  componentDidMount() {
+    this.setState({ genere: getGenere(), movies: getMovies() });
+  }
   handleDelete = (movie) => {
     this.setState({
       movies: this.state.movies.filter((m) => m._id !== movie._id),
@@ -31,6 +34,9 @@ class Movies extends Component {
   handlePageChange = (page) => {
     this.setState({ currentPage: page });
   };
+  handleGenereSelect = (g) => {
+    console.log("clicked", g);
+  };
   render() {
     const { length: count } = this.state.movies;
     const { pageSize, currentPage, movies: allMovies, genere } = this.state;
@@ -42,7 +48,7 @@ class Movies extends Component {
       <div className="container">
         <div className="row">
           <div className="col-2 mt-5" style={{ marginTop: "15px" }}>
-            <SideBar genere={genere} />
+            <SideBar items={genere} onItemSelect={this.handleGenereSelect} />
           </div>
           <div className="col-8">
             <div className="mt-5">You have {count} movies.</div>
@@ -73,8 +79,7 @@ class Movies extends Component {
                     <td>
                       <button
                         onClick={() => this.handleDelete(movie)}
-                        className="btn btn-danger"
-                      >
+                        className="btn btn-danger">
                         Delete
                       </button>
                     </td>

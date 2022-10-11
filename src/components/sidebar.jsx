@@ -1,16 +1,25 @@
 import React from "react";
-import { getGenere } from "../services/fakeGenereData";
 
 const SideBar = (props) => {
-  //const { allGenere } = props;
-  console.log(props.allGenere);
+  const { items, onItemSelect, textProperty, valueProperty } = props;
   return (
     <ul className="list-group">
-      {/* {allGenere.map((g) => {
-        <li className="list-group-item active">{g.name}</li>;
-      })} */}
+      {items.map((g) => {
+        return (
+          <li
+            key={g[valueProperty]}
+            onClick={() => onItemSelect(g)}
+            className="list-group-item">
+            {g[textProperty]}
+          </li>
+        );
+      })}
     </ul>
   );
 };
 
+SideBar.defaultProps = {
+  textProperty: "name",
+  valueProperty: "_id",
+};
 export default SideBar;

@@ -1,19 +1,20 @@
 import React from "react";
 
 const SideBar = (props) => {
-  const { items, onItemSelect, textProperty, valueProperty } = props;
+  const { items, onItemSelect, textProperty, valueProperty, selectedItem } =
+    props;
   return (
     <ul className="list-group">
-      {items.map((g) => {
-        return (
-          <li
-            key={g[valueProperty]}
-            onClick={() => onItemSelect(g)}
-            className="list-group-item">
-            {g[textProperty]}
-          </li>
-        );
-      })}
+      {items.map((item) => (
+        <li
+          key={item[valueProperty]}
+          onClick={() => onItemSelect(item)}
+          className={
+            item === selectedItem ? "list-group-item active" : "list-group-item"
+          }>
+          {item[textProperty]}
+        </li>
+      ))}
     </ul>
   );
 };

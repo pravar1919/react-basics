@@ -11,7 +11,7 @@ const movies = [
   {
     _id: "633bdbabfc13ae7bff00008f",
     title: "Lovely Molly",
-    genere: { _id: "633be0d2fc13ae118d00113a", name: "Sci-Fi" },
+    genere: { _id: "633be0d2fc13ae118d00113b", name: "Sci-Fi" },
     numberInStock: 2,
     dailyRentalRate: 3.6,
     like: true,
@@ -20,7 +20,7 @@ const movies = [
   {
     _id: "633bdbabfc13ae7bff000090",
     title: "West Point Story, The",
-    genere: { _id: "633be0d2fc13ae118d00113a", name: "Romance" },
+    genere: { _id: "633be0d2fc13ae118d00113c", name: "Romance" },
     numberInStock: 3,
     dailyRentalRate: 4.2,
     like: false,
@@ -29,7 +29,7 @@ const movies = [
   {
     _id: "633bdbabfc13ae7bff000091",
     title: "Stuck Between Stations",
-    genere: { _id: "633be0d2fc13ae118d00113a", name: "Comedy" },
+    genere: { _id: "633be0d2fc13ae118d00113d", name: "Comedy" },
     numberInStock: 4,
     dailyRentalRate: 3.3,
     like: false,
@@ -47,7 +47,7 @@ const movies = [
   {
     _id: "633bdbabfc13ae7bff000093",
     title: "Kevin Nealon: Whelmed, But Not Overly",
-    genere: { _id: "633be0d2fc13ae118d00113a", name: "Romance" },
+    genere: { _id: "633be0d2fc13ae118d00113c", name: "Romance" },
     numberInStock: 6,
     dailyRentalRate: 1.9,
     like: true,
@@ -65,7 +65,7 @@ const movies = [
   {
     _id: "633bdbabfc13ae7bff000095",
     title: "Air America",
-    genere: { _id: "633be0d2fc13ae118d00113a", name: "Romance" },
+    genere: { _id: "633be0d2fc13ae118d00113c", name: "Romance" },
     numberInStock: 8,
     dailyRentalRate: 2.6,
     like: true,
@@ -74,7 +74,7 @@ const movies = [
   {
     _id: "633bdbabfc13ae7bff000096",
     title: "Early Spring (Soshun)",
-    genere: { _id: "633be0d2fc13ae118d00113a", name: "Sci-Fi" },
+    genere: { _id: "633be0d2fc13ae118d00113b", name: "Sci-Fi" },
     numberInStock: 9,
     dailyRentalRate: 1.5,
     like: false,
@@ -83,7 +83,7 @@ const movies = [
   {
     _id: "633bdbabfc13ae7bff000097",
     title: "The Mark of Cain",
-    genere: { _id: "633be0d2fc13ae118d00113a", name: "Comedy" },
+    genere: { _id: "633be0d2fc13ae118d00113d", name: "Comedy" },
     numberInStock: 10,
     dailyRentalRate: 3.8,
     like: true,

@@ -1,8 +1,12 @@
 import React from "react";
 
-const SideBar = (props) => {
-  const { items, onItemSelect, textProperty, valueProperty, selectedItem } =
-    props;
+const SideBar = ({
+  items,
+  onItemSelect,
+  textProperty,
+  valueProperty,
+  selectedItem,
+}) => {
   return (
     <ul className="list-group">
       {items.map((item) => (

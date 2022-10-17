@@ -4,6 +4,7 @@ import "./index.css";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 import "bootstrap/dist/css/bootstrap.css";
+import { BrowserRouter } from "react-router-dom";
 import "font-awesome/css/font-awesome.css";
 import Counters from "./components/counters";
 import Movies from "./components/movies";
@@ -11,7 +12,9 @@ import Movies from "./components/movies";
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
-    <Movies />
+    <BrowserRouter>
+      <Movies />
+    </BrowserRouter>
   </React.StrictMode>
 );
 
